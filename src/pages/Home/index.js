@@ -50,12 +50,14 @@ export default function Home() {
     function handleMarker(e) {
         e.preventDefault();
 
+        const lat = parseFloat(latitude);
+        const lng = parseFloat(longitude);
         const lastMarker = markers[markers.length - 1];
         const current = [{
             id: lastMarker.id + 1,
             title: '',
-            lat: parseFloat(latitude),
-            lng: parseFloat(longitude),
+            lat: lat,
+            lng: lng,
             type: 'new',
             icon: url
         }];
@@ -63,8 +65,8 @@ export default function Home() {
         const appliedFactor = 0.01 * factor * markers.length;
 
         setMarkers([...markers, ...current]);
-        setLatitude(latitude + appliedFactor);
-        setLongitude(longitude + appliedFactor);
+        setLatitude(lat + appliedFactor);
+        setLongitude(lng + appliedFactor);
         setFactor(factor * -1);
     }
 

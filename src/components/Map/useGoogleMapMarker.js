@@ -40,15 +40,7 @@ export default function useGoogleMapMarker({
     }
     
     setMarker(marker);
-  }, [id,
-    position,
-    map,
-    title,
-    type,
-    icon,
-    events,
-    maps.Marker,
-    maps.Circle]);
+  }, []);
 
   return marker;
 }
