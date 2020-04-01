@@ -13,7 +13,6 @@ export default function Home() {
     const [factor, setFactor] = useState(-1);
 
     useEffect(() => {
-        debugger
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const { latitude, longitude } = position.coords;
@@ -39,7 +38,6 @@ export default function Home() {
     }, []);
 
     function showPermissionMessage() {
-        debugger
         if (!accessGranted) {
             return (
                 <div className="no-permission">
@@ -51,7 +49,6 @@ export default function Home() {
 
     function handleMarker(e) {
         e.preventDefault();
-        debugger
 
         const lastMarker = markers[markers.length - 1];
         const current = [{
